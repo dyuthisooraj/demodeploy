@@ -35,7 +35,7 @@ namespace HalcyonApparelsMVC.Controllers
             }
             CustomerAdd();
             return RedirectToAction("Mail", "Marketing");
-            return RedirectToAction("AccessoryView", "Home");
+            //return RedirectToAction("AccessoryView", "Home");
         }
 
 

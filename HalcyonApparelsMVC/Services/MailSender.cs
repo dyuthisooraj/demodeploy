@@ -32,6 +32,7 @@ namespace HalcyonApparelsMVC.Services
                 mailMessage.IsBodyHtml = true;
 
                 mailMessage.Body = System.IO.File.ReadAllText($"{Directory.GetCurrentDirectory()}/wwwroot/emails/Mixed.cshtml");
+                //mailMessage.Body = System.IO.File.ReadAllText($"{Directory.GetCurrentDirectory()}/wwwroot/watches/Shoes.cshtml");
                 //foreach (string ToEMailId in recepientEmails)
                 {
                     mailMessage.To.Add(new MailAddress(recepientEmail));

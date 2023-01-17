@@ -82,7 +82,7 @@ namespace HalcyonApparelsMVC.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> AccessoryTypeView(MapDTO map)
+        public async Task<IActionResult> MarketingView(MapDTO map)
         {
            
             HttpClientHandler clienthandler = new HttpClientHandler();
@@ -97,8 +97,8 @@ namespace HalcyonApparelsMVC.Controllers
             if (Result.IsSuccessStatusCode)
             {
                 TempData["AlertMessage"] = " Mapping updated ";
-                
-                
+                return RedirectToAction("AccessoryView", "Home");
+
             }
 
             return View();
@@ -132,7 +132,7 @@ namespace HalcyonApparelsMVC.Controllers
 
             _mailSender.SendBulkMail(sendmail);
             return RedirectToAction("AccessoryView", "Home");
-            return View();
+            //return View();
         }
 
 
