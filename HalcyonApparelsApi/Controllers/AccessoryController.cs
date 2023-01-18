@@ -84,15 +84,21 @@ namespace HalcyonApparelsApi.Controllers
             {
                 {
 
+                    AccessoryDetails acc5 = _accsry.Get(accdto.AccessoryId);
                     acc4.AccessoryId = accdto.AccessoryId;
                     acc4.AccessoryName = accdto.AccessoryName;
                     acc4.AccessoryType = accdto.AccessoryType;
                     acc4.AccessoryBrand = accdto.AccessoryBrand;
                     acc4.AccessoryPrice = accdto.AccessoryPrice;
                     acc4.AccessoryDiscount = accdto.AccessoryDiscount;
-                    acc4.ImageUrl = accdto.ImageUrl;
+                    if (!string.IsNullOrWhiteSpace(accdto.ImageUrl))
+                        acc4.ImageUrl = accdto.ImageUrl;
+                    else
+                        acc4.ImageUrl = acc5.ImageUrl;
 
-                }
+                
+
+            }
 
             }
             _accsry.Edit(acc4);

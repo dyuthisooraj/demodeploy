@@ -2,6 +2,7 @@
 using HalcyonApparelsApplication.Interfaces;
 using HalcyonApparelsDomain.Entities;
 using HalcyonApparelsInfrastructure.Data.Repository;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,7 @@ namespace HalcyonApparelsInfrastructure.Implementation
             return _dbobj.CustomerDetails.ToList();
 
         }
+        
 
 
 
@@ -75,6 +77,39 @@ namespace HalcyonApparelsInfrastructure.Implementation
             //var bag = _dbobj.OrderDetails.ToList().Where(x => x.Product_Type__c.Equals(ptype));
             return true;
         }
-
+        public List<MarketingList> GetMailingList()
+        {
+            var cutlist = _dbobj.CustomerDetails.ToList();
+            var orderlist= _dbobj.OrderDetails.ToList();
+            var protypelist = _dbobj.Products.Include(c => c.accessoryTypes).ToList();
+            var acclistitems = _dbobj.AccessoryDetails.ToList();
+            var cutomeIdList= new List<string>();
+            foreach(var item in cutlist)
+            {
+                cutomeIdList.Add(item.ContactId);
+            }
+            List<MarketingList> marketingLists = new List<MarketingList>();
+            foreach(var item in cutomeIdList)
+            {
+                MarketingList marketing = new MarketingList();
+                marketing.ContactId = item;
+                marketing.Parent_Order_Id__c = orderlist.Where(c => c.Contact__c.Equals(item)).FirstOrDefault().Parent_Order_Id__c;
+                marketing.Email = cutlist.Where(c => c.ContactId.Equals(item)).FirstOrDefault().Email;
+                marketing.Product_Type__c= orderlist.Where(c => c.Contact__c.Equals(item)).FirstOrDefault().Product_Type__c;
+                List<AccessoryDetails> acclist = new List<AccessoryDetails>();
+                var productDetails = protypelist.Where(c => c.ProdType.Equals(marketing.Product_Type__c)).FirstOrDefault();
+                foreach(var accitem in productDetails.accessoryTypes.ToList())
+                {
+                    AccessoryDetails accessoryDetails = new AccessoryDetails();
+                    accessoryDetails.AccessoryId = acclistitems.Where(c => c.AccessoryType.Equals(accitem.AccsryType)).FirstOrDefault().AccessoryId;
+                    accessoryDetails.ImageUrl = acclistitems.Where(c => c.AccessoryType.Equals(accitem.AccsryType)).FirstOrDefault().ImageUrl;
+                    accessoryDetails.AccessoryType = acclistitems.Where(c => c.AccessoryType.Equals(accitem.AccsryType)).FirstOrDefault().AccessoryType;
+                    acclist.Add(accessoryDetails);
+                }
+                marketing.AccessoryDetailsList = acclist;
+                marketingLists.Add(marketing);
+            }
+            return marketingLists;
+        }
     }
 }

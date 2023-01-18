@@ -85,7 +85,7 @@ namespace HalcyonApparelsInfrastructure.Implementation
 
                             };
 
-                            if (_appDBContext.Products.ToList().Where(c => c.ProdType.Equals(ordermodel.Product_Type__c)) == null)
+                            if (_appDBContext.Products.ToList().Where(c => c.ProdType.Equals(ordermodel.Product_Type__c)) == null || _appDBContext.Products.ToList().Where(c => c.ProdType.Equals(ordermodel.Product_Type__c)).Count()==0)
                             {
 
                                 _appDBContext.Products.Add(new ProductType { ProdType = ordermodel.Product_Type__c });

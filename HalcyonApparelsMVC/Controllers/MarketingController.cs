@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 
 namespace HalcyonApparelsMVC.Controllers
 {
@@ -117,20 +118,36 @@ namespace HalcyonApparelsMVC.Controllers
             List<GetCustomer>? customer = new List<GetCustomer>();
 
             HttpResponseMessage res = client.GetAsync("api/Mapping/GetCustomer").Result;
+
             if (res.IsSuccessStatusCode)
             {
                 var result = res.Content.ReadAsStringAsync().Result;
                 customer = JsonConvert.DeserializeObject<List<GetCustomer>>(result);
             }
+            List<MarketingList>? mailtype = new List<MarketingList>();
+            HttpResponseMessage resmail = client.GetAsync("api/Mapping/GetMailingList").Result;
 
-            IEnumerable<string> sendmail = new List<string>();
-            foreach (var send in customer)
+            if (resmail.IsSuccessStatusCode)
             {
-                sendmail = sendmail.Append(send.Email);
-
+                var result = res.Content.ReadAsStringAsync().Result;
+                mailtype = JsonConvert.DeserializeObject<List<MarketingList>>(result);
             }
+            //IEnumerable<string> sendmail = new List<string>();
+            
+            //foreach (var send in mailtype)
+            //{
+            //    sendmail = sendmail.Append(send.Email);
+                
+            //}
 
-            _mailSender.SendBulkMail(sendmail);
+            //IEnumerable<string> custprod = new List<string>();
+            //foreach (var send in mailtype)
+            //{
+            //    custprod = custprod.Append(send.Product_Type__c);
+
+            //}
+
+            _mailSender.SendBulkMail(mailtype);
             return RedirectToAction("AccessoryView", "Home");
             //return View();
         }

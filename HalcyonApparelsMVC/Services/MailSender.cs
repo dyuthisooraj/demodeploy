@@ -16,7 +16,8 @@ namespace HalcyonApparelsMVC.Services
             _config = config;
         }
 
-        private bool SendEmail(string recepientEmail)
+        //private bool SendEmail(string recepientEmail)
+         private bool SendEmail(MarketingList mlist)
         {
             try
             {
@@ -28,24 +29,28 @@ namespace HalcyonApparelsMVC.Services
                 MailMessage mailMessage = new MailMessage();
                 mailMessage.From = new MailAddress(FromEmailid);
                 mailMessage.Subject = "Test Subject";
-                //mailMessage.Body = "Test Message";
+                
                 mailMessage.IsBodyHtml = true;
 
-                mailMessage.Body = System.IO.File.ReadAllText($"{Directory.GetCurrentDirectory()}/wwwroot/emails/Mixed.cshtml");
-                //mailMessage.Body = System.IO.File.ReadAllText($"{Directory.GetCurrentDirectory()}/wwwroot/watches/Shoes.cshtml");
-                //foreach (string ToEMailId in recepientEmails)
+                if (mlist.Product_Type__c == "shirt")
                 {
-                    mailMessage.To.Add(new MailAddress(recepientEmail));
+                    mailMessage.Body = System.IO.File.ReadAllText($"{Directory.GetCurrentDirectory()}/wwwroot/emails/Mixed.cshtml");
+                    //mailMessage.Body = System.IO.File.ReadAllText($"{Directory.GetCurrentDirectory()}/wwwroot/watches/Shoes.cshtml");
+                   
+                    {
+                        mailMessage.To.Add(new MailAddress(mlist.Email));
+                    }
+
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Host = HostAdd;
+                    smtp.EnableSsl = true;
+                    smtp.Port = Convert.ToInt32(SMTPPort);
+                    smtp.Credentials = new NetworkCredential(FromEmailid, gmailPassword);
+                    smtp.Send(mailMessage);
+
+                    return true;
                 }
-
-                SmtpClient smtp = new SmtpClient();
-                smtp.Host = HostAdd;
-                smtp.EnableSsl = true;
-                smtp.Port = Convert.ToInt32(SMTPPort);
-                smtp.Credentials = new NetworkCredential(FromEmailid, gmailPassword);
-                smtp.Send(mailMessage);
-
-                return true;
+                return false;
             }
             catch (Exception ex)
             {
@@ -55,13 +60,16 @@ namespace HalcyonApparelsMVC.Services
      
        
 
-        public async void SendBulkMail(IEnumerable<string> recepientEmails)
+        //public async void SendBulkMail(IEnumerable<string> recepientEmails)
+        public async void SendBulkMail(List<MarketingList> mlist)
         {
-            foreach (var mailid in recepientEmails)
+            foreach (var mailid in mlist)
             {
                 SendEmail(mailid);
 
             }
+            //SendEmail(mlist);
+
         }
     }
 }

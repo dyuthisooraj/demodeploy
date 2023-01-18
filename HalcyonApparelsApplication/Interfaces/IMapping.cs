@@ -19,7 +19,7 @@ namespace HalcyonApparelsApplication.Interfaces
 
         List<ProductType> GetProductType();
 
-
+        List<MarketingList> GetMailingList();
         public bool Addaccsry(string atype, string ptype);
 
     }

@@ -200,7 +200,7 @@ namespace HalcyonApparelsMVC.Controllers
 
         private string ProcessUploadFileEdit(TempData tempmodel)
         {
-            string uniqueEditedFileName = null;
+            string uniqueEditedFileName = String.Empty;
 
             if (tempmodel.ImageFile != null)
             {

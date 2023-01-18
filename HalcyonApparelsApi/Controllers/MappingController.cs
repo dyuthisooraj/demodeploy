@@ -52,5 +52,12 @@ namespace HalcyonApparelsApi.Controllers
             return Ok(result);
         }
 
+        [HttpGet("GetMailingList")]
+        //[Route("get2/{param1}")]
+        public ActionResult<List<MarketingList>> GetMailingList()
+        {
+            var result = _mapping.GetMailingList();
+            return Ok(result);
+        }
     }
 }
