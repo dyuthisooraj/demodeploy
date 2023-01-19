@@ -129,27 +129,14 @@ namespace HalcyonApparelsMVC.Controllers
 
             if (resmail.IsSuccessStatusCode)
             {
-                var result = res.Content.ReadAsStringAsync().Result;
+                var result = resmail.Content.ReadAsStringAsync().Result;
                 mailtype = JsonConvert.DeserializeObject<List<MarketingList>>(result);
             }
-            //IEnumerable<string> sendmail = new List<string>();
-            
-            //foreach (var send in mailtype)
-            //{
-            //    sendmail = sendmail.Append(send.Email);
-                
-            //}
-
-            //IEnumerable<string> custprod = new List<string>();
-            //foreach (var send in mailtype)
-            //{
-            //    custprod = custprod.Append(send.Product_Type__c);
-
-            //}
+           
 
             _mailSender.SendBulkMail(mailtype);
             return RedirectToAction("AccessoryView", "Home");
-            //return View();
+            
         }
 
 

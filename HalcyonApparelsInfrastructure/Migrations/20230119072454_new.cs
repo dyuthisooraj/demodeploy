@@ -5,7 +5,7 @@
 namespace HalcyonApparelsInfrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class first : Migration
+    public partial class @new : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -36,6 +36,19 @@ namespace HalcyonApparelsInfrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CustomerDetails", x => x.ContactId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CustomerMarketing",
+                columns: table => new
+                {
+                    ContactId = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
+                    Email = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: true),
+                    ProductTypec = table.Column<string>(name: "Product_Type__c", type: "VARCHAR(50)", maxLength: 50, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CustomerMarketing", x => x.ContactId);
                 });
 
             migrationBuilder.CreateTable(
@@ -117,7 +130,7 @@ namespace HalcyonApparelsInfrastructure.Migrations
                     AccessoryBrand = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
                     AccessoryPrice = table.Column<decimal>(type: "DECIMAL(18,0)", nullable: false),
                     AccessoryDiscount = table.Column<decimal>(type: "DECIMAL(18,0)", nullable: false),
-                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     OrderDetailsId = table.Column<int>(type: "INT", nullable: true)
                 },
                 constraints: table =>
@@ -157,6 +170,9 @@ namespace HalcyonApparelsInfrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "AdminLogin");
+
+            migrationBuilder.DropTable(
+                name: "CustomerMarketing");
 
             migrationBuilder.DropTable(
                 name: "LoginCredentials");

@@ -52,7 +52,6 @@ namespace HalcyonApparelsInfrastructure.Migrations
                         .HasColumnType("VARCHAR");
 
                     b.Property<string>("ImageUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("OrderDetailsId")
@@ -131,6 +130,26 @@ namespace HalcyonApparelsInfrastructure.Migrations
                     b.HasKey("ContactId");
 
                     b.ToTable("CustomerDetails");
+                });
+
+            modelBuilder.Entity("HalcyonApparelsDomain.Entities.CustomerMarketing", b =>
+                {
+                    b.Property<string>("ContactId")
+                        .HasMaxLength(50)
+                        .HasColumnType("VARCHAR");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(50)
+                        .HasColumnType("VARCHAR");
+
+                    b.Property<string>("Product_Type__c")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("VARCHAR");
+
+                    b.HasKey("ContactId");
+
+                    b.ToTable("CustomerMarketing");
                 });
 
             modelBuilder.Entity("HalcyonApparelsDomain.Entities.LoginCredentials", b =>

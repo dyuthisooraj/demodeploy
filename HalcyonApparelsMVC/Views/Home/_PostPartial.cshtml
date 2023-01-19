@@ -44,7 +44,7 @@
                 <label asp-for="ImageFile" class="control-label"></label>
                 <div class="custom-file">
                     <input asp-for="ImageFile" class="custom-file-input" id="FLFrontImage" onchange="document.getElementById('FrontImagePrv').src=window.URL.createObjectURL(this.files[0])" />
-                    <label class="custom-file-label" for="FLFrontImage"></label>
+                    
                 </div>
                 <span asp-validation-for="ImageFile" class="text-danger"></span>
             </div>

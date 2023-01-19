@@ -26,7 +26,7 @@ namespace HalcyonApparelsInfrastructure.Implementation
         public List<CustomerDetails> GetCustomer()
         {
 
-            //return _dbobj.CustomerDetails.Select(x => x.Email).ToList();
+            
             return _dbobj.CustomerDetails.ToList();
 
         }
@@ -74,7 +74,7 @@ namespace HalcyonApparelsInfrastructure.Implementation
                 _dbobj.Products.Update(prodtype);
                 _dbobj.SaveChanges();
             }
-            //var bag = _dbobj.OrderDetails.ToList().Where(x => x.Product_Type__c.Equals(ptype));
+            
             return true;
         }
         public List<MarketingList> GetMailingList()

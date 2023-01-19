@@ -7,42 +7,44 @@ namespace HalcyonApparelsMVC.Models
     public class AccessoryDetailsMVC
     {
 
-       
+
+ 
         [DisplayName("Id")]
         //[Required(ErrorMessage = "Accessory Id is required")]
         [Column(TypeName = "INT")]
         public int AccessoryId { get; set; } = 0;
 
         [DisplayName("Title")]
-        //[Required(ErrorMessage = "Accessory Name is required")]
+        [Required(ErrorMessage = "Accessory Name is required")]
         [Column(TypeName = "VARCHAR")]
         [StringLength(50, MinimumLength = 3)]
         public string AccessoryName { get; set; } = null!;
 
         [DisplayName("Type")]
-        //[Required(ErrorMessage = "Accessory Type is required")]
+        [Required(ErrorMessage = "Accessory Type is required")]
         [Column(TypeName = "VARCHAR")]
         [StringLength(50, MinimumLength = 3)]
         public string AccessoryType { get; set; } = null!;
 
         [DisplayName("Brand")]
-        //[Required(ErrorMessage = "Accessory Brand is required")]
+        [Required(ErrorMessage = "Accessory Brand is required")]
         [Column(TypeName = "VARCHAR")]
         [StringLength(50, MinimumLength = 3)]
         public string AccessoryBrand { get; set; } = null!;
 
+
         [DisplayName("Price")]
-        //[Required(ErrorMessage = "Accessory Price is required")]
+        [Required(ErrorMessage = "Accessory Price is required")]
         [Column(TypeName = "DECIMAL")]
-        [Range(1, 100000)]
+        [Range(1, 100000, ErrorMessage = "Please enter valid price")]
         public decimal AccessoryPrice { get; set; }
 
         [DisplayName("Discount")]
         [Column(TypeName = "DECIMAL")]
-        [Range(1, 100)]
+        [Range(1, 100, ErrorMessage = "Please enter valid discount")]
         public decimal AccessoryDiscount { get; set; }
 
-        public string ImageUrl { get; set; }
+        public string? ImageUrl { get; set; }
 
 
         [NotMapped]
@@ -50,3 +52,4 @@ namespace HalcyonApparelsMVC.Models
         public IFormFile ImageFile { get; set; }
     }
 }
+

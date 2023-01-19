@@ -40,12 +40,12 @@ namespace HalcyonApparelsDomain.Entities
         [DisplayName("Price")]
         [Required(ErrorMessage = "Accessory Price is required")]
         [Column(TypeName = "DECIMAL")]
-        [Range(1, 100000)]
+        [Range(1, 100000, ErrorMessage = "Please enter valid discount")]
         public decimal AccessoryPrice { get; set; }
 
         [DisplayName("Discount")]
         [Column(TypeName = "DECIMAL")]
-        [Range(1, 100)]
+        [Range(1, 100,ErrorMessage = "Please enter valid discount")]
         public decimal AccessoryDiscount { get; set; }
 
         public string? ImageUrl { get; set; }

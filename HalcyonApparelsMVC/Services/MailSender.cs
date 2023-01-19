@@ -17,47 +17,51 @@ namespace HalcyonApparelsMVC.Services
         }
 
         //private bool SendEmail(string recepientEmail)
-         private bool SendEmail(MarketingList mlist)
+        private bool SendEmail(MarketingList mlist)
         {
-            try
-            {
-                string HostAdd = _config.GetSection("Gmail")["ServerName"];
-                string FromEmailid = _config.GetSection("Gmail")["Sender"];
-                var gmailPassword = _config.GetSection("Gmail")["Password"];
-                string SMTPPort = _config.GetSection("Gmail")["Port"];
 
-                MailMessage mailMessage = new MailMessage();
-                mailMessage.From = new MailAddress(FromEmailid);
-                mailMessage.Subject = "Test Subject";
+            string HostAdd = _config.GetSection("Send")["ServerName"];
+            string FromEmailid = _config.GetSection("Send")["FromEmail"];
+            var mailPassword = _config.GetSection("Send")["APIKey"];
+            string SMTPPort = _config.GetSection("Send")["Port"];
+
+            MailMessage mailMessage = new MailMessage();
+            mailMessage.From = new MailAddress(FromEmailid);
+            mailMessage.Subject = "Test Subject";
+
+            mailMessage.IsBodyHtml = true;
+
+            if ((mlist.Product_Type__c == "shirt")|| (mlist.Product_Type__c == "Pant")|| (mlist.Product_Type__c == "Jeans")|| (mlist.Product_Type__c == "T-Shirt")|| (mlist.Product_Type__c == "Jackets"))
+            {
+                mailMessage.Body = System.IO.File.ReadAllText($"{Directory.GetCurrentDirectory()}/wwwroot/emails/Watches.cshtml");
                 
-                mailMessage.IsBodyHtml = true;
-
-                if (mlist.Product_Type__c == "shirt")
-                {
-                    mailMessage.Body = System.IO.File.ReadAllText($"{Directory.GetCurrentDirectory()}/wwwroot/emails/Mixed.cshtml");
-                    //mailMessage.Body = System.IO.File.ReadAllText($"{Directory.GetCurrentDirectory()}/wwwroot/watches/Shoes.cshtml");
-                   
-                    {
-                        mailMessage.To.Add(new MailAddress(mlist.Email));
-                    }
-
-                    SmtpClient smtp = new SmtpClient();
-                    smtp.Host = HostAdd;
-                    smtp.EnableSsl = true;
-                    smtp.Port = Convert.ToInt32(SMTPPort);
-                    smtp.Credentials = new NetworkCredential(FromEmailid, gmailPassword);
-                    smtp.Send(mailMessage);
-
-                    return true;
-                }
-                return false;
             }
-            catch (Exception ex)
+            else if((mlist.Product_Type__c == "kurthis")|| (mlist.Product_Type__c == "Top"))
+
             {
-                return false;
+                mailMessage.Body = System.IO.File.ReadAllText($"{Directory.GetCurrentDirectory()}/wwwroot/emails/bag.cshtml");
+
             }
+            else if( (mlist.Product_Type__c == "Frock")|| (mlist.Product_Type__c == "Dungaree"))
+
+            {
+                mailMessage.Body = System.IO.File.ReadAllText($"{Directory.GetCurrentDirectory()}/wwwroot/emails/Toys.cshtml");
+
+            }
+                {
+                    mailMessage.To.Add(new MailAddress(mlist.Email));
+                }
+
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = HostAdd;
+                smtp.EnableSsl = true;
+                smtp.Port = Convert.ToInt32(SMTPPort);
+                smtp.Credentials = new NetworkCredential(FromEmailid, mailPassword);
+                smtp.Send(mailMessage);
+             
+            
+            return true;
         }
-     
        
 
         //public async void SendBulkMail(IEnumerable<string> recepientEmails)
