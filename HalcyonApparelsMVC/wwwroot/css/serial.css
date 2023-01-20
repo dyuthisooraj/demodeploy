@@ -1,9 +1,16 @@
 ﻿body {
-    counter-reset: Serial;
+    /*counter-reset: Serial;*/
 }
 
 
-tr td:first-child:before {
+/*tr td:first-child:before {
     counter-increment: Serial;
     content: counter(Serial);
+}
+*/
+
+
+.auto-index td:first-child:before {
+    counter-increment: Serial; /* Increment the Serial counter */
+    content: "Serial is: " counter(Serial); /* Display the counter */
 }

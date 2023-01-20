@@ -36,15 +36,20 @@
                     <input asp-for="AccessoryDiscount" class="form-control" />
                     <span asp-validation-for="AccessoryDiscount" class="text-danger"></span>
                 </div>
+           
                 <div class="form-group">
-                    <label asp-for="ImageFile" class="control-label"></label>
+                    @*<label asp-for="ImageFile" class="control-label"></label>*@
+                   
                     <div class="custom-file">
-                        <input asp-for="ImageFile" class="custom-file-input" onchange="document.getElementById('FrontImagePrv').src=window.URL.createObjectURL(this.files[0])" />
-
+                        Select new file
+                        <input asp-for="ImageFile" class="custom-file-input hidden" onchange="document.getElementById('FrontImagePrv').src=window.URL.createObjectURL(this.files[0])" />
+                        @*<label asp-for="ImageFile">Select file</label>*@
+                        
                     </div>
-                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                    @*<span asp-validation-for="ImageFile" class="text-danger"></span>*@
                 </div>
-                <img id="FrontImagePrv" src="" alt="image" width="150" height="150" style="border:1px; margin-top:20px; margin-left:120px;" />
+                @*<img id="FrontImagePrv" src="" alt="image" width="150" height="150" style="border:1px; margin-top:20px; margin-left:120px;" />*@
+                Saved Image
                 <img src="~/photos/@Model.ImageUrl" width="150" height="150" />
                 <div class="modal-footer">
                     <input type="submit" value="Save" class="btn btn-primary colorbtn" />
@@ -70,5 +75,6 @@
     $("#FLFrontImage").change(function () {
         $("#lable_file").html($(this).val().split("\\").splice(-1, 1)[0] || "Select file");
     });
+    
 </script>
 

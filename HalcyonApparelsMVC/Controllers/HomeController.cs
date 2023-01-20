@@ -193,7 +193,7 @@ namespace HalcyonApparelsMVC.Controllers
                     model.ImageFile.CopyTo(fileStream);
                 }
             }
-
+        
             return uniqueFileName;
         }
 
@@ -213,7 +213,9 @@ namespace HalcyonApparelsMVC.Controllers
                     tempmodel.ImageFile.CopyTo(fileStream);
                 }
             }
+            ViewBag.Message = "File uploaded successfully.";
 
+            ViewBag.ImageURL = "photos\\" + uniqueEditedFileName;
             return uniqueEditedFileName;
         }
 

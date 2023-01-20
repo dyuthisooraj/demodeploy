@@ -132,8 +132,7 @@ namespace HalcyonApparelsMVC.Controllers
                 var result = resmail.Content.ReadAsStringAsync().Result;
                 mailtype = JsonConvert.DeserializeObject<List<MarketingList>>(result);
             }
-           
-
+  
             _mailSender.SendBulkMail(mailtype);
             return RedirectToAction("AccessoryView", "Home");
             

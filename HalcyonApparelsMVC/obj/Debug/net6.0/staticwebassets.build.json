@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gDBJ2qW6+Z5+oquLegJZBm3vGKmNHtYC8yQAPOEe2no=",
+  "Hash": "fBcPeFXbOBkj+QnHvYdIkmZmbvefyC0X3a0gCSe74Xo=",
   "Source": "HalcyonApparelsMVC",
   "BasePath": "_content/HalcyonApparelsMVC",
   "Mode": "Default",
@@ -1479,6 +1479,23 @@
       "OriginalItemSpec": "wwwroot\\photos\\0c6a27a7-c5f4-4a44-b862-03ffc7f8d710_caprese2.jpg"
     },
     {
+      "Identity": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\photos\\1365f568-86de-4ab3-8205-6e1d1c86b75b_caprese2.jpg",
+      "SourceId": "HalcyonApparelsMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\",
+      "BasePath": "_content/HalcyonApparelsMVC",
+      "RelativePath": "photos/1365f568-86de-4ab3-8205-6e1d1c86b75b_caprese2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\1365f568-86de-4ab3-8205-6e1d1c86b75b_caprese2.jpg"
+    },
+    {
       "Identity": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\photos\\21301c01-c9d7-4b99-9338-ddbed412bee3_caprese2.jpg",
       "SourceId": "HalcyonApparelsMVC",
       "SourceType": "Discovered",
@@ -1647,6 +1664,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\photos\\5366efe5-be07-4107-9ccf-6f8b7488c3d0_louisvuittonbag1.jpg"
+    },
+    {
+      "Identity": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\photos\\5391bc25-e5ed-4d80-b723-ec3ca698705e_caprese3.jpg",
+      "SourceId": "HalcyonApparelsMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\",
+      "BasePath": "_content/HalcyonApparelsMVC",
+      "RelativePath": "photos/5391bc25-e5ed-4d80-b723-ec3ca698705e_caprese3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\5391bc25-e5ed-4d80-b723-ec3ca698705e_caprese3.jpg"
     },
     {
       "Identity": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\photos\\57a4242a-9da6-4f81-bb01-19ba6632d260_1.png",
@@ -1955,6 +1989,40 @@
       "OriginalItemSpec": "wwwroot\\photos\\95c8bcd8-4fe4-4796-8c8b-1d42198d5320_fireboltsmartwatch1.jpg"
     },
     {
+      "Identity": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\photos\\9cf0c7e2-3eee-4d6c-b281-bda7789dcef4_caprese3.jpg",
+      "SourceId": "HalcyonApparelsMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\",
+      "BasePath": "_content/HalcyonApparelsMVC",
+      "RelativePath": "photos/9cf0c7e2-3eee-4d6c-b281-bda7789dcef4_caprese3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\9cf0c7e2-3eee-4d6c-b281-bda7789dcef4_caprese3.jpg"
+    },
+    {
+      "Identity": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\photos\\9ed14aa8-824d-4364-ac0f-e8caae9da4f8_caprese1.png",
+      "SourceId": "HalcyonApparelsMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\",
+      "BasePath": "_content/HalcyonApparelsMVC",
+      "RelativePath": "photos/9ed14aa8-824d-4364-ac0f-e8caae9da4f8_caprese1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\9ed14aa8-824d-4364-ac0f-e8caae9da4f8_caprese1.png"
+    },
+    {
       "Identity": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\photos\\9f7c71f7-8bad-43ba-9f6e-7a72de703c6f_caprese1.png",
       "SourceId": "HalcyonApparelsMVC",
       "SourceType": "Discovered",
@@ -1970,6 +2038,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\photos\\9f7c71f7-8bad-43ba-9f6e-7a72de703c6f_caprese1.png"
+    },
+    {
+      "Identity": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\photos\\a64967fa-207d-41d4-807b-7f451d2527e8_caprese2.jpg",
+      "SourceId": "HalcyonApparelsMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\",
+      "BasePath": "_content/HalcyonApparelsMVC",
+      "RelativePath": "photos/a64967fa-207d-41d4-807b-7f451d2527e8_caprese2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\a64967fa-207d-41d4-807b-7f451d2527e8_caprese2.jpg"
     },
     {
       "Identity": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\photos\\a90612c7-f852-4130-a676-e62c8f4165c1_louisphillipebelts1.jpg",
@@ -2108,6 +2193,23 @@
       "OriginalItemSpec": "wwwroot\\photos\\d46f8620-d24b-4d00-84fa-0e4e174ea7c7_fireboltsmartwatch1.jpg"
     },
     {
+      "Identity": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\photos\\d72c0e4f-7cac-4390-a89e-242eda80ef62_caprese3.jpg",
+      "SourceId": "HalcyonApparelsMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\",
+      "BasePath": "_content/HalcyonApparelsMVC",
+      "RelativePath": "photos/d72c0e4f-7cac-4390-a89e-242eda80ef62_caprese3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\d72c0e4f-7cac-4390-a89e-242eda80ef62_caprese3.jpg"
+    },
+    {
       "Identity": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\photos\\dde34ebe-cee9-4bd5-96eb-0d1d449b2d6d_1a.jpg",
       "SourceId": "HalcyonApparelsMVC",
       "SourceType": "Discovered",
@@ -2159,6 +2261,23 @@
       "OriginalItemSpec": "wwwroot\\photos\\f3a14ec5-d7cd-4ccf-8888-2ca79428fa97_louisvuittonbag1.jpg"
     },
     {
+      "Identity": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\photos\\f3c9f50d-7066-44c9-9649-083a87cc1987_caprese2.jpg",
+      "SourceId": "HalcyonApparelsMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\",
+      "BasePath": "_content/HalcyonApparelsMVC",
+      "RelativePath": "photos/f3c9f50d-7066-44c9-9649-083a87cc1987_caprese2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\f3c9f50d-7066-44c9-9649-083a87cc1987_caprese2.jpg"
+    },
+    {
       "Identity": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\photos\\f4cd0d1e-3e00-464d-882e-e1339631bde5_sf.jpg",
       "SourceId": "HalcyonApparelsMVC",
       "SourceType": "Discovered",
@@ -2208,6 +2327,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\photos\\fa73222f-a487-4692-b4a8-fb8eae0ac2ee_fireboltsmartwatch1.jpg"
+    },
+    {
+      "Identity": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\photos\\fac28b51-f24e-4102-b341-9dfd28fadeea_caprese1.png",
+      "SourceId": "HalcyonApparelsMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\",
+      "BasePath": "_content/HalcyonApparelsMVC",
+      "RelativePath": "photos/fac28b51-f24e-4102-b341-9dfd28fadeea_caprese1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\fac28b51-f24e-4102-b341-9dfd28fadeea_caprese1.png"
     },
     {
       "Identity": "D:\\allsetemail\\finalnew\\emaillatest\\HalcyonApparelsMVC\\wwwroot\\photos\\fbd288a7-26b8-437e-a7df-9dc9a4b4164e_louisvuittonbag1.jpg",

@@ -20,7 +20,7 @@
         </button>
     </div>
 }
-<table class="table" id="myTable">
+<table class="table auto-index" id="myTable">
     <thead>
         <tr>
             <th>Sl. No</th>
@@ -33,7 +33,7 @@
                 <div style="float:right;">
 
 
-                    <button type="button" id="addbtn" class="btn btn-primary">Add</button>
+                    <button type="button" id="addbtn" class="btn btn-primary" title="Add" style="cursor:pointer;">Add</button>
 
                 </div>
             </th>
@@ -51,10 +51,10 @@
 
                 <td >
                     <div style="float: right;">
-                    <i class="bi bi-pencil-fill editbtn" data-id="@item.AccessoryId" style="color:blue;"></i>
-                    <i class="bi bi-file-earmark-text-fill detailsbtn" data-id="@item.AccessoryId" style="color:rgb(105, 186, 167); margin-left:15px; "></i>
+                    <i class="bi bi-pencil-fill editbtn" data-id="@item.AccessoryId" title="Edit" style="color:blue; cursor:pointer;"></i>
+                        <i class="bi bi-file-earmark-text-fill detailsbtn" data-id="@item.AccessoryId" title="Details" style="color:rgb(105, 186, 167); margin-left:15px; cursor:pointer;"></i>
 
-                    <a href="@Url.Action("Delete", new { id=item.AccessoryId })" style="color:red; margin-left:15px;" new { onclick="return confirm('Are you sure to Delete this ?');" })>
+                        <a href="@Url.Action("Delete", new { id=item.AccessoryId })" title="Delete" style="color:red; margin-left:15px; cursor:pointer;" new { onclick="return confirm('Are you sure to Delete this ?');" })>
                         <i class="bi bi-trash-fill"></i>
 
                     </a>

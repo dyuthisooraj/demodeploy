@@ -4,11 +4,71 @@ using System.Net.Mail;
 using System.Net;
 using Microsoft.Extensions.DependencyInjection;
 using SendGrid.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+
+{
+
+options.LoginPath = "/LoginMVC/Login";
+
+options.AccessDeniedPath = "/denied";
+
+options.Events = new CookieAuthenticationEvents()
+
+{
+
+    OnSigningIn = async context =>
+
+    {
+
+        /*var principal = context.Principal;
+
+        if (principal.HasClaim(c => c.Type == ClaimTypes.NameIdentifier))
+
+        {
+
+            if (principal.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value == model.password)
+
+            {
+
+                var claimsIdentity = principal.Identity as ClaimsIdentity;
+
+                claimsIdentity.AddClaim(new Claim(ClaimTypes.Role, "Admin"));
+
+            }
+
+        }*/
+
+
+
+
+        await Task.CompletedTask;
+
+    },
+
+    OnSignedIn = async content =>
+
+    {
+
+        await Task.CompletedTask;
+
+    },
+
+    OnValidatePrincipal = async content =>
+
+    {
+
+        await Task.CompletedTask;
+
+    }
+
+};
+
 builder.Services.AddSingleton<IAuthenticate, SalesforceAuthenticate>();
 builder.Services.AddSingleton<ISalesforceData, SalesforceData>();
 builder.Services.AddSingleton<IMailSender, MailSender>();
@@ -79,6 +139,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseSalesforceMiddleware();
 app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
